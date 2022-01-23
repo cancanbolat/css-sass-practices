@@ -1,3 +1,32 @@
 @import "normalize";
 @import "default";
 @import "variables";
+
+/* Image */
+.cover-image{
+    @include cover-image
+}
+
+/* Margin-x */
+@include margin;
+
+/* Flex */
+.d-flex{
+    @include display-flex(unset, unset, unset, unset)
+}
+
+.d-flex-between{
+    @include display-flex(unset, space-between, unset, unset)
+}
+
+.d-flex-around{
+    @include display-flex(unset, space-around, unset, unset)
+}
+
+.d-flex-center{
+    @include display-flex(center, unset, unset, unset)
+}
+
+.d-flex-col{
+    @include display-flex(unset, unset, column, unset)
+}
