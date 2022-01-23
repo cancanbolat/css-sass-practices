@@ -6,10 +6,12 @@ $def-scale-rotate: scale(1.1) rotate(5deg);
 $fifty-translate: translate(-50%, -50%);
 
 /* MIXINS */
-@mixin display-flex($align-items, $justify-content) {
+@mixin display-flex($align-items, $justify-content, $direction, $wrap) {
     display: flex;
     align-items: $align-items;
     justify-content: $justify-content;
+    flex-direction: $direction;
+    flex-wrap: $wrap;
 }
 
 @mixin display-grid($columns, $rows, $row-gap, $col-gap) {
@@ -26,6 +28,14 @@ $fifty-translate: translate(-50%, -50%);
     display: block;
 }
 
+@mixin margin {
+    @for $i from 1 through 100 {
+        .margin-#{$i}{
+            margin: ($i) + px;
+        } 
+      }
+}
+
 /* ALERTS */
 .alert {
     color: black;
@@ -34,6 +44,7 @@ $fifty-translate: translate(-50%, -50%);
     padding: 1.5rem;
     display: inline-block;
     font-size: 1.8rem;
+    margin: 10px 10px;
 
     &-danger {
         color: white;
@@ -55,39 +66,6 @@ $fifty-translate: translate(-50%, -50%);
 }
 
 /* MARGINS AND PADDINGS */
-//Margin
-.m {
-    &-1 {
-        margin: 1px;
-    }
-    &-2 {
-        margin: 2px;
-    }
-    &-3 {
-        margin: 3px;
-    }
-    &-4 {
-        margin: 4px;
-    }
-    &-5 {
-        margin: 5px;
-    }
-    &-6 {
-        margin: 6px;
-    }
-    &-7 {
-        margin: 7px;
-    }
-    &-8 {
-        margin: 8px;
-    }
-    &-9 {
-        margin: 9px;
-    }
-    &-10 {
-        margin: 10px;
-    }
-}
 
 // Margin TOP
 .mt {
